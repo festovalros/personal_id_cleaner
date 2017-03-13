@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+    <record id="clean_personal_id_view_form" model="ir.ui.view">
+        <field name="name">clean_personal_id.form</field>
+        <field name="model">clean_personal_id</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Personal ID">
+            <group col="4" colspan="2">
+                <field name="unclean" select="1"/>
+                <field name="clean" select="2"/>
+
+            </group>
+            </form>
+        </field>
+    </record>
+    <record id="view_clean_personal_id_view_tree" model="ir.ui.view" >
+        <field name="name">clean_personal_id.tree</field>
+        <field name="model">clean_personal_id</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="CleanPersonalID">
+                <field name="unclean"/>
+                <field name="clean"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_clean_personal_id">
+        <field name="name">clean_personal_id</field>
+        <field name="res_model">clean_personal_id</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="PersonalID" id="menu_clean_personal_id" action="action_clean_personal_id"/>
+
+        
+</data>
+</openerp>
